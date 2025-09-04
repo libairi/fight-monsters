@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="怪兽幸存者 - 在线玩终极生存游戏。与怪兽战斗，升级你的技能，尽可能长时间生存！">
+    <meta name="keywords" content="怪兽幸存者, 生存游戏, 在线游戏, 怪兽战斗, 生存游戏">
+    <meta name="author" content="怪兽幸存者">
+    <link rel="canonical" href="https://monstersurvivors.com/">
+    <title>怪兽幸存者 - 在线生存游戏</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="hero-content">
+                <div class="shiba-character">
+                    🐕‍🦺
+                </div>
+                <div>
+                    <h1>怪兽幸存者</h1>
+                    <p class="tagline">与无尽的怪兽浪潮战斗，尽可能长时间生存！</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="game-section">
+            <div class="container">
+                <h2>在线玩怪兽幸存者</h2>
+                
+                <!-- Game Language Selector -->
+                <div class="language-selector">
+                    <h3>🌐 游戏语言选择</h3>
+                    <div class="language-options">
+                        <button onclick="changeGameLanguage('zh_CN')" class="lang-btn active" data-lang="zh_CN">中文</button>
+                        <button onclick="changeGameLanguage('en_US')" class="lang-btn" data-lang="en_US">English</button>
+                        <button onclick="changeGameLanguage('ja_JP')" class="lang-btn" data-lang="ja_JP">日本語</button>
+                        <button onclick="changeGameLanguage('ko_KR')" class="lang-btn" data-lang="ko_KR">한국어</button>
+                    </div>
+                    <div class="language-note">
+                        <p>💡 如果游戏界面仍显示英文，说明该游戏暂不支持中文界面。</p>
+                        <p>📚 别担心！我们已经为您准备了详细的中文操作指南和游戏说明，帮助您轻松上手游戏。</p>
+                        <p>🎮 您也可以尝试其他语言选项，看看是否有您熟悉的语言。</p>
+                    </div>
+                </div>
+
+                <div class="game-container">
+                    <div class="game-loading" id="gameLoading">
+                        <div class="loading-spinner"></div>
+                        <div class="loading-text">游戏加载中...</div>
+                        <div class="loading-tips">
+                            <p>💡 提示：游戏可能需要几秒钟时间加载</p>
+                            <p>🎮 使用WASD或方向键移动，鼠标点击攻击</p>
+                        </div>
+                    </div>
+                    <iframe 
+                        id="gameFrame"
+                        src="https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html?locale=zh_CN&lang=zh&language=chinese"
+                        title="怪兽幸存者游戏"
+                        frameborder="0"
+                        allowfullscreen
+                        onload="hideLoading()"
+                        onerror="handleGameError()">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <h2>关于怪兽幸存者</h2>
+                <div class="content-grid">
+                    <div class="content-block">
+                        <h3>游戏概览</h3>
+                        <p>怪兽幸存者是一款激烈的动作生存游戏，你将面对越来越具有挑战性的无尽怪兽浪潮。选择你的角色，升级你的能力，在这场惊心动魄的生存战斗中看看你能坚持多久。</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h3>如何游戏</h3>
+                        <p>使用直观的控制来移动你的角色并攻击怪兽。收集能量道具，升级你的武器，并在游戏过程中解锁新能力。每一波都会带来新的挑战和更强大的敌人需要克服。</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h3>主要特点</h3>
+                        <ul>
+                            <li>快节奏的生存游戏玩法</li>
+                            <li>多种角色职业可选择</li>
+                            <li>渐进式难度系统</li>
+                            <li>能量道具和升级系统</li>
+                            <li>无尽的怪兽浪潮</li>
+                            <li>适合所有设备的响应式控制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-section">
+            <div class="container">
+                <h2>生存技巧</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-character">🐕</div>
+                        <h3>保持移动</h3>
+                        <p>不断移动以避免被怪兽包围。利用环境来获得优势。</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-character">🦴</div>
+                        <h3>明智升级</h3>
+                        <p>选择适合你游戏风格的升级。根据你的策略专注于生存或攻击。</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-character">⚡</div>
+                        <h3>注意健康</h3>
+                        <p>监控你的生命值条并战略性地使用治疗物品。不要在轻微伤害上浪费它们。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <div class="container">
+                <h2>游戏操作指南</h2>
+                <div class="controls-grid">
+                    <div class="control-group">
+                        <h3>🎮 基本操作</h3>
+                        <div class="control-item">
+                            <span class="control-key">WASD</span>
+                            <span class="control-desc">角色移动</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="control-key">方向键</span>
+                            <span class="control-desc">角色移动</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="control-key">鼠标左键</span>
+                            <span class="control-desc">攻击怪兽</span>
+                        </div>
+                        <div class="control-item">
+                            <span class="control-key">空格键</span>
+                            <span class="control-desc">特殊技能</span>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <h3>🎯 游戏目标</h3>
+                        <ul class="game-objectives">
+                            <li>💥 消灭所有出现的怪兽</li>
+                            <li>❤️ 保持你的生命值不要归零</li>
+                            <li>⭐ 收集金币和能量道具</li>
+                            <li>🔧 升级你的武器和技能</li>
+                            <li>⏱️ 在每一波攻击中存活下来</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="control-group">
+                        <h3>💡 游戏提示</h3>
+                        <ul class="game-tips">
+                            <li>🔄 不断移动避免被包围</li>
+                            <li>🎯 优先攻击最强的怪兽</li>
+                            <li>💎 收集所有掉落的道具</li>
+                            <li>🛡️ 在安全时升级装备</li>
+                            <li>⚡ 合理使用特殊技能</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-shiba">🐕‍🦺</div>
+                <div>
+                    <p>&copy; 2024 怪兽幸存者. 版权所有.</p>
+                    <p>免费在线游戏 - 无需下载</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Game language switching functionality
+        function changeGameLanguage(language) {
+            const iframe = document.getElementById('gameFrame');
+            const loading = document.getElementById('gameLoading');
+            const baseUrl = 'https://cloud.onlinegames.io/games/2025/unity/monster-survivors/index-og.html';
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-lang="${language}"]`).classList.add('active');
+            
+            // Build URL with language parameters
+            let url = baseUrl;
+            switch(language) {
+                case 'zh_CN':
+                    url += '?locale=zh_CN&lang=zh&language=chinese';
+                    break;
+                case 'en_US':
+                    url += '?locale=en_US&lang=en&language=english';
+                    break;
+                case 'ja_JP':
+                    url += '?locale=ja_JP&lang=ja&language=japanese';
+                    break;
+                case 'ko_KR':
+                    url += '?locale=ko_KR&lang=ko&language=korean';
+                    break;
+            }
+            
+            // Show loading screen
+            loading.style.display = 'flex';
+            loading.style.opacity = '1';
+            loading.innerHTML = `
+                <div class="loading-spinner"></div>
+                <div class="loading-text">切换语言中...</div>
+                <div class="loading-tips">
+                    <p>💡 正在加载${language === 'zh_CN' ? '中文' : language === 'en_US' ? '英文' : language === 'ja_JP' ? '日文' : '韩文'}版本</p>
+                    <p>🎮 使用WASD或方向键移动，鼠标点击攻击</p>
+                </div>
+            `;
+            
+            // Reload iframe with new language
+            iframe.src = url;
+        }
+
+        // Responsive iframe height adjustment
+        function adjustIframeHeight() {
+            const iframe = document.querySelector('iframe');
+            const container = document.querySelector('.game-container');
+            const aspectRatio = 16 / 9;
+            
+            if (window.innerWidth <= 768) {
+                container.style.height = window.innerWidth * 0.75 + 'px';
+            } else {
+                const containerWidth = container.offsetWidth;
+                container.style.height = containerWidth / aspectRatio + 'px';
+            }
+        }
+
+        // Hide loading screen when game is loaded
+        function hideLoading() {
+            const loading = document.getElementById('gameLoading');
+            if (loading) {
+                setTimeout(() => {
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.style.display = 'none';
+                    }, 300);
+                }, 1000);
+            }
+        }
+
+        // Handle game loading error
+        function handleGameError() {
+            const loading = document.getElementById('gameLoading');
+            if (loading) {
+                loading.innerHTML = `
+                    <div class="error-icon">⚠️</div>
+                    <div class="error-title">游戏加载失败</div>
+                    <div class="error-message">
+                        <p>很抱歉，游戏无法加载。</p>
+                        <p>请检查您的网络连接，或稍后重试。</p>
+                        <button onclick="retryLoading()" class="retry-button">重新加载</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Retry loading the game
+        function retryLoading() {
+            const loading = document.getElementById('gameLoading');
+            const iframe = document.getElementById('gameFrame');
+            
+            // Reset loading screen
+            loading.innerHTML = `
+                <div class="loading-spinner"></div>
+                <div class="loading-text">重新加载游戏...</div>
+                <div class="loading-tips">
+                    <p>💡 提示：游戏可能需要几秒钟时间加载</p>
+                    <p>🎮 使用WASD或方向键移动，鼠标点击攻击</p>
+                </div>
+            `;
+            
+            // Reload iframe
+            iframe.src = iframe.src;
+        }
+
+        // Fallback loading timeout
+        setTimeout(() => {
+            const loading = document.getElementById('gameLoading');
+            if (loading && loading.style.display !== 'none') {
+                loading.innerHTML += `
+                    <div class="loading-warning">
+                        <p>⏰ 游戏加载时间较长，请耐心等待...</p>
+                        <button onclick="retryLoading()" class="retry-button">重新加载</button>
+                    </div>
+                `;
+            }
+        }, 30000); // 30 seconds timeout
+
+        // Initialize and adjust on resize
+        window.addEventListener('load', adjustIframeHeight);
+        window.addEventListener('resize', adjustIframeHeight);
+    </script>
+</body>
+</html>
